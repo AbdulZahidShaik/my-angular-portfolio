@@ -1,137 +1,31 @@
-
-
-  <div class="flex flex-wrap bg-body-secondary gap-2">
-    <h2 class="display-4 mb-1 p-4" style="margin-left: 3rem;">Projects</h2>
-    <div class="p-4">
-      <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-        <ng-template pTemplate="header">
-          <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-        </ng-template>
-        <ng-template pTemplate="title"> Advanced Card </ng-template>
-        <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-          quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-        </p>
-        <ng-template pTemplate="footer">
-          <div class="flex gap-4 mt-1">
-            <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
+<div class="bg-animation"></div>
+<div class="container">
+  <h2 class="text-center mb-4">Projects</h2>
+  <p class="text-center mb-5">
+    Here are some of the projects I have worked on. Click on the GitHub button to view the source code.
+  </p>
+  <div class="card" style="background-color: transparent; border: none; box-shadow: none;">
+    <p-carousel
+      [value]="projects"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions"
+      [autoplayInterval]="10000"
+    >
+      <ng-template let-project pTemplate="item" >
+        <div class="carousel-card p-2 m-2" style="border: 1px solid #ccc; border-radius: 0.75rem; background-color: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+          <img [src]="project.image" [alt]="project.name" style="width: 20rem;height: 15rem; object-fit: cover; border-radius: 0.75rem;" />
+          <div class="card-body">
+            <h5>{{ project.name }}</h5>
+            <small>{{ project.Technology }}</small>
+            <p>{{ project.description }}</p>
+            <a [href]="project.link" target="_blank" class="btn btn-outline-dark w-100 mt-2">
+              <i class="fa-brands fa-github me-2"></i> Github
+            </a>
           </div>
-        </ng-template>
-      </p-card>
-    </div>
-    <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-      <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-      <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-      <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-      <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-      <div class="p-4">
-        <p-card styleClass="flex-grow-1" [style]="{ width: '20rem', position: 'relative', overflow: 'hidden' }">
-          <ng-template pTemplate="header">
-            <img alt="Card" class="w-100" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-          </ng-template>
-          <ng-template pTemplate="title"> Advanced Card </ng-template>
-          <ng-template pTemplate="subtitle"> Card subtitle </ng-template>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-            quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-          </p>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-4 mt-1">
-                <a href="https://github.com/AbdulZahidShaik" class="btn btn-outline-dark" target="_blank"><i class="fa-brands fa-github me-2"></i>Github</a>
-            </div>
-          </ng-template>
-        </p-card>
-      </div>
-    
-    
-    
+        </div>
+      </ng-template>
+    </p-carousel>
   </div>
-  
-
-  
+</div>

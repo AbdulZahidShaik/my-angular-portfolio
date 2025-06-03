@@ -1,54 +1,32 @@
-<section class="p-3 mb-2 py-4">
-    <h2 class="display-4 mb-3 p-3">Experience</h2>
-    <div class="container ">
-      <div class="row align-items-center">
-        <div class="col-md-4 text-center">
-            <img src="Images/Nowcomlogo.jpg" alt="Resume Preview" class="img-fluid shadow-lg rounded shadow" style="max-width: 250px;">
-        </div>
-        <div class="col-md-8">
-            <h2 class="display-7 p-2 lead">Jr Software Engineer, Nowcom Corporation, India March 2022 - December 2022</h2>
-            <p>• Developed responsive single-page applications using Angular, TypeScript, and RESTful APIs in an Agile environment,
-                resulting in a 20% improvement in page load speed and enhanced user experience.<br>
-                Leveraged Angular CLI, Git, and IDEs to create scalable code, implement reactive forms with validations, and utilize
-                Angular modules, services, and directives. Experimenting with 10+ developer tools in Agile sprints.</p>
+<div class="bg-animation"></div>
+<section class="experience-section">
+  <div class="experience-container">
+    <h2 class="section-title"><i class="fas fa-tree me-2"></i> Professional Journey</h2>
+    <div class="tree-container">
+      <div class="tree-branch" *ngFor="let experience of experiences; let i = index" [@branchGrow]="experience.state">
+        <div class="experience-node">
+          <div class="node-connector" [ngClass]="{'first': i === 0, 'last': i === experiences.length - 1}"></div>
+          <div class="experience-card">
+            <div class="card-content">
+              <div class="card-image-container text-center">
+                <img [src]="experience.image" [alt]="experience.company" class="card-image">
+              </div>
+              <div class="card-info">
+                <h3 class="card-title">{{ experience.position }}</h3>
+                <p class="card-subtitle">{{ experience.company }} | {{ experience.dates }}</p>
+                <ul class="card-description">
+                  <li *ngFor="let point of experience.description" class="description-item">
+                    <i class="fas fa-leaf me-2"></i> {{ point }}
+                  </li>
+                </ul>
+                <div class="card-tech">
+                  <p-chip *ngFor="let tag of experience.tags" [label]="tag" styleClass="tech-chip" />
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
       </div>
     </div>
-    <br>
-    <div class="container ">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img src="Images/agrietern_technologies_private_limited_logo.jpg" alt="Resume Preview" class="img-fluid shadow-lg rounded shadow" style="max-width: 250px;">
-            </div>
-            <div class="col-md-8">
-                <h2 class="display-7 p-2 lead">Front-End Developer Intern, Agrietern Technologies, India July 2021 – October 2021</h2>
-                <p>• Implemented core e-commerce features such as product catalogs and secured checkout processes and optimized the
-                    product recommendation algorithm using linear programming techniques, resulting in a 25% increase in click-through
-                    rates and a 2000+ increase in user engagement for a startup.<br>
-                    • Partnered with UX/UI designers to develop interactive & brand-aligned components and collaborated with back-end teams
-                    for seamless integration, debugging, and data-driven insights using Bootstrap, NgRx, Figma, Material-UI, and Git.
-                </p>
-            </div>
-        </div>
-
-    </div>
-    <br>
-    <div class="container ">
-        <div class="row align-items-center">
-            <div class="col-md-4 text-center">
-                <img src="Images/ngitlogo.jpg" alt="Resume Preview" class="img-fluid shadow-lg rounded shadow" style="max-width: 250px;">
-            </div>
-            <div class="col-md-8">
-                <h2 class="display-7 p-2 lead">Student Website Developer Intern, NgITians, India March 2020- June 2021</h2>
-                <p>• Collaborated with a team of students to develop a student-friendly web application from scratch, featuring platforms for
-                    sharing research, club information, college notices, educational content, and an interactive leaderboard, while
-                    implementing social media functionalities that boosted user interaction by 60% and expanded the platform's reach to 600+
-                    active users within 6 months.
-                </p>
-            </div>
-        </div>
-    </div>
-    
-    
-      
-  </section>
+  </div>
+</section>

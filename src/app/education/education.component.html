@@ -1,37 +1,65 @@
-<h2 class="display-4 mb-1 p-4" style="margin-left: 3rem;">Education</h2>
-<div class="card mb-5 p-3 mx-auto" style="width: 100rem; background-color: rgb(109, 141, 36);">
-    <div class="row g-0">
-      <div class="col-md-2">
-        <img src="Images/PSUImage.jpg" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+<div class="bg-animation"></div>
+<section class="education-section">
+  <div class="education-grid">
+    <!-- Left: Education List (multiple cards) -->
+    <div class="education-list">
+      <div class="education-card tall-education-card">
+        <img src="Images/PSUImage.jpg" alt="Portland State University" class="card-image" />
+        <div class="card-info">
+          <h3 class="card-title">Master of Science in Computer Science</h3>
+          <p class="card-subtitle">Portland State University</p>
+          <p class="card-date">January 2023 - March 2025</p>
+          <p class="card-description">I completed my Masters in Computer Science with a focus on AI/ML, Large Language Models, Software Engineering, and Data Structures. I had the opportunity to assist in AI/ML research under faculty guidance and graduated with a CGPA of 3.8. It was a deeply enriching and hands-on learning experience.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Software Engineering</span>
+            <span class="tech-tag">Large Language Models</span>
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">NLP</span>
+          </div>
         </div>
       </div>
-      <div class="col-md-2">
-        <img src="Images/PSUImage.jpg" class="img-fluid rounded-start" alt="...">
-      </div>
+      
     </div>
-    
-  </div>
-  
 
-  <div class="card mb-5 p-3 mx-auto" style="width: 100rem; background-color: rgb(253, 160, 0);">
-    <div class="row g-0">
-      <div class="col-md-2">
-        <img src="Images/PSUImage.jpg" class="img-fluid rounded-start" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <!-- Right: Details + Carousel (featured education + certificates) -->
+    <div class="education-details">
+      <!-- Top: Featured Education Card -->
+      <div class="education-card featured-education-card">
+        <img src="Images/PSUImage.jpg" alt="Portland State University" class="card-image" />
+        <div class="card-info">
+          <h3 class="card-title">Bachelors in Engineering in Information Technology</h3>
+          <p class="card-subtitle">Osmania University</p>
+          <p class="card-date">April 2018 - March 2022</p>
+          <p class="card-description">Completed my B.E. in IT with a focus on AI/ML, working on 10+ projects and collaborating with startups. Led my college kabaddi team, gaining leadership and teamwork experience while exploring diverse career paths.</p>
+          <div class="card-tech">
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Software Engineering</span>
+            <span class="tech-tag">AI</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Information Technology</span>
+          </div>
         </div>
       </div>
+      <!-- Bottom: Certificate Carousel -->
+      <div class="certificate-carousel">
+        <p-carousel [value]="[
+          { image: 'Images/DSA_Certificate.jpg', title: 'DSA Certificate from Great Learning' },
+          { image: 'Images/DL_Certificate.jpg', title: 'Intro to Deep Learning Certificate' },
+          { image: 'Images/ML_certificate.jpg', title: 'Machine Learning Certificate from Great Learning' },
+
+        ]" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
+          <ng-template let-certificate pTemplate="item">
+            <div class="carousel-item">
+              <img [src]="certificate.image" [alt]="certificate.title" class="certificate-image" />
+              <div class="certificate-title">{{ certificate.title }}</div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
     </div>
-    
   </div>
-  
+</section>

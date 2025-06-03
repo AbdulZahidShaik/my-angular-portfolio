@@ -1,0 +1,71 @@
+/* Adjust the navbar padding and brand font */
+.navbar {
+  padding: 0.2rem;
+}
+.my-brand {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-stretch: ultra-expanded;
+  text-fill-color: transparent;
+  letter-spacing: 4px;
+  font-family: 'Chalkduster', fantasy;
+  
+}
+
+
+
+/* Ensure nav-links have a smooth transition and proper spacing */
+.navbar-nav .nav-link {
+  margin-left: 1rem;
+  transition: color 0.3s;
+}
+
+/* Active or hovered nav-link styling */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+
+
+
+/* Vertical mobile dock, only visible on small screens */
+.mobile-dock {
+  position: fixed;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  padding: 0.7rem 0.4rem;
+  z-index: 1000;
+}
+
+.mobile-dock a {
+  color: #333;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s;
+  text-align: center;
+}
+
+.mobile-dock a.active,
+.mobile-dock a:hover {
+  background: #4ecdc4;
+  color: #fff;
+}
+
+@media (min-width: 768px) {
+  .mobile-dock {
+    display: none;
+  }
+}

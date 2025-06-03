@@ -1,24 +1,54 @@
 import { Component } from '@angular/core';
-import {ButtonModule} from 'primeng/button';
-import { CarouselModule } from 'primeng/carousel';
-import { CardModule } from 'primeng/card';
-import { SplitterModule } from 'primeng/splitter';
+import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-contactme',
-  imports: [ButtonModule, CarouselModule, CardModule, SplitterModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  //providers: [provideHttpClient()], // <-- Add this line
   templateUrl: './contactme.component.html',
-  styleUrl: './contactme.component.css'
+  styleUrls: ['./contactme.component.css']
 })
 export class ContactmeComponent {
-  profile = [
-    {
-      image: 'Images/AZPic.jpg', // Replace with your image URL
-      name: 'Abdul Zahid Shaik',
-      title: 'Software Engineer',
-      description: 'A passionate software engineer with an M.S. in Computer Science...',
-      link: 'https://www.linkedin.com/in/abdulzahidshaik/' // Replace with your link
-    }
-  ];
+  name: string = '';
+  email: string = '';
+  message: string = '';
+  address: string = '';
+  driversLicense: string = '';
+  private apiUrl = 'https://script.google.com/macros/s/AKfycbxD4540W-HvCA_3dmYT4ziosNU23G7rEM3mzKRRNnb7r3HlPmV3TOTZL6BzzJltcJWUcw/exec'; // Replace with your Web app URL
 
+  constructor(private http: HttpClient) {}
+
+  onSubmit(form: NgForm) {
+    if (form.valid) {
+      const data = {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+        address:this.address,
+        driversLicense: this.driversLicense
+
+      };
+      this.http.post(this.apiUrl, data).subscribe({
+        next: (response) => {
+          console.log('Data sent successfully', response);
+          alert('Message sent successfully!');
+          this.name = '';
+          this.email = '';
+          this.message = '';
+          this.address = '';
+          this.driversLicense = '';
+          // Reset the form
+          form.resetForm();
+        },
+        error: (error) => {
+          console.error('Error sending data', error);
+          alert('Error sending message. Please try again.');
+        }
+      });
+    }
+  }
 }

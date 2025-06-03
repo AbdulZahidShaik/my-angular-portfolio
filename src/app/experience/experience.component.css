@@ -1,0 +1,380 @@
+.experience-section {
+  color: #333;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  position: relative;
+  padding: 4rem 2rem;
+  
+  overflow-x: hidden;
+  
+}
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 195, 113, 0.15) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  overflow: hidden;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: #2c5282;
+  animation: fadeIn 1s ease-out;
+}
+
+.tree-container {
+  position: relative;
+  padding-left: 60px; /* Space for tree trunk */
+}
+
+.tree-container::before {
+  content: '';
+  position: absolute;
+  left: 20px; /* Center the trunk within the padding */
+  top: 0;
+  width: 4px; /* Thickness of the vertical trunk */
+  height: 100%; /* Span the full height of the container */
+  background: #4ecdc4; /* Green trunk color */
+  z-index: 0;
+}
+
+.tree-branch {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.experience-node {
+  position: relative;
+}
+
+.experience-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -40px; /* Align with the trunk */
+  width: 20px; /* Horizontal branch length */
+  height: 4px; /* Thickness of the branch */
+  background: #4ecdc4; /* Match trunk color */
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.experience-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -40px; /* Align with the trunk */
+  width: 20px;
+  height: 20px;
+  background: #4ecdc4;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.card-content {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.card-image-container {
+  flex: 0 0 auto;
+}
+
+.card-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.card-image:hover {
+  transform: scale(1.05);
+}
+
+.card-info {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1.2rem;
+  color: #4a5568;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  list-style: none;
+  padding: 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.description-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.description-item i {
+  color: #4ecdc4;
+  font-size: 1rem;
+  margin-top: 0.2rem;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+:host ::ng-deep .tech-chip {
+  background: #e6fffa;
+  border: 1px solid #4ecdc4;
+  border-radius: 20px;
+  color: #2d3748;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  transition: all 0.3s ease;
+}
+
+:host ::ng-deep .tech-chip:hover {
+  background: #b7f5d1;
+  transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes branchGrow {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsiveness for different screen sizes */
+@media (max-width: 992px) {
+  .experience-container {
+    max-width: 800px;
+  }
+
+  .tree-container {
+    padding-left: 50px;
+  }
+
+  .tree-container::before {
+    left: 6px;
+    width: 3px;
+  }
+
+  .experience-card::before {
+    left: -35px;
+    width: 15px;
+  }
+
+  .experience-card::after {
+    left: -35px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .card-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-subtitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-container {
+    max-width: 600px;
+  }
+
+  .tree-container {
+    padding-left: 40px;
+  }
+
+  .tree-container::before {
+    left: 10px;
+    width: 2px;
+  }
+
+  .experience-card::before {
+    left: -30px;
+    width: 10px;
+  }
+
+  .experience-card::after {
+    left: -30px;
+    width: 15px;
+    height: 15px;
+  }
+
+  .card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .experience-container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .tree-container {
+    padding-left: 30px;
+  }
+
+  .tree-container::before {
+    left: 5px;
+    width: 2px;
+  }
+
+  .experience-card::before {
+    left: -20px;
+    width: 8px;
+  }
+
+  .experience-card::after {
+    left: -20px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .card-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+  }
+
+  .tech-chip {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .experience-container {
+    max-width: 1100px;
+  }
+
+  .tree-container {
+    padding-left: 70px;
+  }
+
+  .tree-container::before {
+    left: 7px;
+    width: 5px;
+  }
+
+  .experience-card::before {
+    left: -60px;
+    width: 25px;
+  }
+
+  .experience-card::after {
+    left: -35px;
+    width: 22px;
+    height: 22px;
+  }
+}

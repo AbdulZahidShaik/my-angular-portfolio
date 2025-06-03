@@ -1,25 +1,70 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
-  <div class="container-fluid ">
-    <a class="navbar-brand" href="#">Abdul Zahid Shaik Portfolio</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="container-fluid">
+    <!-- Use Angular routerLink for SPA navigation -->
+    <a class="navbar-brand my-brand" routerLink="/">AZS</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Home
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Experience</a>
+          <a class="nav-link" routerLink="/experience" routerLinkActive="active">
+            Experience
+          </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Projects</a>
+          <a class="nav-link" routerLink="/education" routerLinkActive="active">
+            Education
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Contact Me</a>
+          <a class="nav-link" routerLink="/projects" routerLinkActive="active">
+            Projects
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active">
+            Contact Me
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
+<!-- Add this at the end of your main template, outside router-outlet -->
+<nav class="mobile-dock">
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Home">
+    <i class="fas fa-home"></i>
+  </a>
+  <a routerLink="/experience" routerLinkActive="active" title="Experience">
+    <i class="fas fa-briefcase"></i>
+  </a>
+  <a routerLink="/education" routerLinkActive="active" title="Education">
+    <i class="fas fa-graduation-cap"></i>
+  </a>
+  <a routerLink="/projects" routerLinkActive="active" title="Projects">
+    <i class="fas fa-code"></i>
+  </a>
+  <a routerLink="/contact" routerLinkActive="active" title="Contact">
+    <i class="fas fa-envelope"></i>
+  </a>
+</nav>

@@ -8,12 +8,19 @@ import { ContactmeComponent } from './contactme/contactme.component';
 import { EducationComponent } from './education/education.component';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { CardModule } from 'primeng/card';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import bootstrap from '../main.server'; 
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from './footer/footer.component';
+
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,AnimateOnScrollModule, ScrollTopModule, HeaderComponent, MainPageComponent, ExperienceComponent, ProjectsComponent, ContactmeComponent, EducationComponent],
+  imports: [RouterOutlet ,CommonModule ,NgbModule ,CardModule, AnimateOnScrollModule, ScrollTopModule, HeaderComponent, MainPageComponent, ExperienceComponent, ProjectsComponent, ContactmeComponent, EducationComponent, FooterComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'my-angular-app';

@@ -1,0 +1,205 @@
+.education-section {
+  font-family: 'Inter', sans-serif;
+  display: grid;
+  background: transparent;
+}
+
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(255, 195, 113, 0.15) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(30px, -30px) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) rotate(240deg); }
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  
+  margin: 0 auto;
+}
+.tall-education-card {
+  min-height: 48rem; /* or any height you want */
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 260px;
+  max-width: 340px;
+}
+
+.card-image {
+  width: 15rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.card-info {
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  margin-top: 1rem;
+}
+
+.card-subtitle {
+  font-size: 1.05rem;
+  color: #4ecdc4;
+  margin-bottom: 0.4rem;
+}
+
+.card-date {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.6rem;
+}
+
+.card-description {
+  font-size: 0.97rem;
+  color: #555;
+  margin-bottom: 0.7rem;
+}
+
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.tech-tag {
+  background: #e6fffa;
+  border: 1px solid #4ecdc4;
+  border-radius: 20px;
+  color: #2d3748;
+  font-size: 0.92rem;
+  padding: 0.23rem 0.95rem;
+}
+
+/* Featured education card on the right */
+.featured-education-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 900px;
+}
+
+.featured-education-card .card-image {
+  
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 0;
+}
+
+.featured-education-card .card-info {
+  text-align: left;
+  flex: 1;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: flex-start;
+}
+
+.certificate-carousel {
+  width: 60rem;
+  height: 29rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  max-width: 50rem;
+ 
+}
+
+.carousel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.certificate-image {
+  width: 40rem;
+  height: 24rem;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #eee;
+  background: #fff;
+}
+
+.certificate-title {
+  font-size: 1.08rem;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1200px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .education-list, .education-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+  .featured-education-card {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .featured-education-card .card-info {
+    text-align: center;
+  }
+  .certificate-carousel {
+    max-width: 95vw;
+    padding: 2rem 0.5rem;
+  }
+  .certificate-image {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+  }
+}
